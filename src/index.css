@@ -1,3 +1,16 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#app {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
 }
+
+polygon {
+  stroke: white;
+  stroke-width: 0.2px;
+  fill: lightgray;
+
+  &.on {
+      fill: red;
+  }
+}
+

@@ -1,0 +1,114 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "Follow Microsoft content policies.
+Avoid content that violates copyrights.
+If you are asked to generate content that is harmful, hateful, racist, sexist, lewd, violent, or completely irrelevant to software engineering, only respond with \"Sorry, I can't assist with that.\"
+Keep your answers short and impersonal.
+The programmer will provide you with a set of recently viewed files, their recent edits, and a snippet of code that is currently edited.
+
+When helping the programmer, your goals are:
+- Keep the programmer on the pattern that you think they are on. Some examples are:
+- Further implementing a class, method, or variable.
+- Improving quality of the code.
+- Making sure the programmer does not get distracted - make sure the next changes are relevant.
+- Consider what edits need to be made next, if any.
+- If you think changes should be made, ask yourself if this is really what needs to happen. If you are confident about it, then continue with the edits.
+
+When responding to the programmer, you must follow these rules:
+- Only answer with the updated code. The programmer will copy and paste your code as is in place of the programmer's provided snippet.
+- You must ONLY reply using the tag: <next-version>.:
+- If you see further edits to make to the programmer's code, you must provide the updated code in the <next-version> tag.:
+- If the programmer's code is already correct and requires no further edits, simply answer with <next-version>IDENTICAL</next-version>.
+- Make sure that the indentation level of any new code is correct and consistent with the existing code.
+
+Remember, you must ONLY respond using the tag: <next-version>."
+        },
+        {
+            "role": "user",
+            "content": "These are the files I'm working on, before I started making changes to them:
+<original_code>
+src/segmentBits.ts:
+1│export enum Segments {
+2│    A = 0b0000001,
+3│    B = 0b0000010,
+4│    C = 0b0000100,
+5│    D = 0b0001000,
+6│    E = 0b0010000,
+7│    F = 0b0100000,
+8│    G = 0b1000000,
+9│}
+10│
+11│export const SegmentBits = [
+12│    Segments.A,
+13│    Segments.B,
+14│    Segments.C,
+15│    Segments.D,
+16│    Segments.E,
+17│    Segments.F,
+18│    Segments.G,
+19│];
+20│
+21│export function isValidSegment(segment: Segments) {
+22│    return Object.values(Segments).includes(segment);
+23│}
+24│
+25│export function getSegmentBit()
+</original_code>
+
+This is a sequence of edits that I made on these files, starting from the oldest to the newest:
+<edits_to_original_code>
+```
+---src/segmentBits.ts:
++++src/segmentBits.ts:
+@@ -25,1 +25,3 @@
+-export function getSegmentBit()
++export function getSegmentBit(bits: number, segment: Segments) {
++    
++}
+```
+</edits_to_original_code>
+
+Here is the piece of code I am currently editing in src/segmentBits.ts:
+
+<current-version>
+```typescript
+
+export function isValidSegment(segment: Segments) {
+…
+}
+
+export function getSegmentBit(bits: number, segment: Segments) {
+    
+}
+```
+</current-version>
+
+Based on my most recent edits, what will I do next? Rewrite the code between <current-version> and </current-version> based on what I will do next. Do not skip any lines. Do not be lazy."
+        }
+    ],
+    "model": "copilot-nes-v",
+    "temperature": 0,
+    "top_p": 1,
+    "prediction": {
+        "type": "content",
+        "content": "<next-version>
+```typescript
+
+export function isValidSegment(segment: Segments) {
+…
+}
+
+export function getSegmentBit(bits: number, segment: Segments) {
+    
+}
+```
+</next-version>"
+    },
+    "n": 1,
+    "stream": true,
+    "snippy": {
+        "enabled": false
+    }
+}
